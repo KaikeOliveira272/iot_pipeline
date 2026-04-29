@@ -1,4 +1,4 @@
--- VIEW 1: Leituras por Hora (Exigência 2 do PDF)
+-- VIEW 1: Leituras por Hora 
 CREATE OR REPLACE VIEW view_temporal AS
 SELECT 
     DATE_TRUNC('hour', TO_TIMESTAMP(timestamp, 'DD-MM-YYYY HH24:MI')) AS hora,
@@ -7,7 +7,7 @@ FROM temperature_readings
 GROUP BY hora
 ORDER BY hora;
 
--- VIEW 2: Média, Max e Min por Dispositivo (Exigência 1 e 3 do PDF)
+-- VIEW 2: Média, Max e Min por Dispositivo 
 CREATE OR REPLACE VIEW view_estatisticas AS
 SELECT 
     device_id AS dispositivo,
@@ -17,7 +17,7 @@ SELECT
 FROM temperature_readings
 GROUP BY device_id;
 
--- VIEW 3: Anomalias (Destaque extra para o projeto)
+-- VIEW 3: Anomalias 
 CREATE OR REPLACE VIEW view_anomalias AS
 SELECT *
 FROM temperature_readings
