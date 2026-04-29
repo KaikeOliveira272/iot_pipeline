@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# Conexão com a tua senha: adweb2000
+# Conexão com senha
 engine = create_engine("postgresql://postgres:123456@127.0.0.1:5432/iot_db")
 
 print("Lendo arquivo CSV...")
