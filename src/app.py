@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 # Conexão com o banco (ajuste a senha se necessário)
 engine = create_engine('postgresql://postgres:123456@localhost:5432/iot_db')
 
-# Função para carregar dados (Como sugerido no roteiro do PDF)
+# Função para carregar dados
 def load_data(view_name):
     return pd.read_sql(f"SELECT * FROM {view_name}", engine)
 
@@ -35,7 +35,7 @@ try:
                   markers=True, title="Variação Térmica")
     st.plotly_chart(fig3, use_container_width=True)
 
-    # 4. Tabela de Dados Brutos (Para auditoria do professor)
+    # 4. Tabela de Dados Brutos 
     st.markdown("---")
     with st.expander("🔍 Visualizar Tabela de Anomalias (Temperaturas Críticas)"):
         df_anomalias = load_data('view_anomalias')
